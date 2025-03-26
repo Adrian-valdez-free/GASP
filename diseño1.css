@@ -50,7 +50,10 @@
     float: left;
     margin: -30px;
 }
-
+.imagen2 {
+  margin: auto;
+  text-align: center;
+}
 .ima1{
     width: 150px;
     height: 150px;

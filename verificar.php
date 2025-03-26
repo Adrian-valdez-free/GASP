@@ -39,7 +39,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         }else{
             $_SESSION["usuario"] = $usuario;
             $_SESSION["autentificado"] = "SI";
-            header("Location: menuA.php");
+            header("Location: menuE.php");
             exit();
         }
     }
