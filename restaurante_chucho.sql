@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-03-2025 a las 20:59:36
+-- Tiempo de generación: 26-03-2025 a las 22:30:15
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `comidas` (
 --
 
 INSERT INTO `comidas` (`id`, `ruta`, `nombre_comida`, `descripcion`, `precio`) VALUES
-(1, 'fotos/image-Photoroom.png', 'queso', 'Fialmentyo', 100.00);
+(1, 'fotos/image-Photoroom.png', 'queso', 'Fialmentyo', 100.00),
+(2, 'fotos/image-Photoroom.png', 'Hamburguesaa', 'Rico', 100.00);
 
 -- --------------------------------------------------------
 
@@ -85,6 +86,25 @@ INSERT INTO `ingredientes` (`id`, `nombre_ingrediente`, `ruta`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tipo_usuario`
+--
+
+CREATE TABLE `tipo_usuario` (
+  `id_tipo` int(2) NOT NULL,
+  `tipo` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`id_tipo`, `tipo`) VALUES
+(1, 'Administrador'),
+(2, 'empleado');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -95,21 +115,22 @@ CREATE TABLE `usuarios` (
   `correo` varchar(100) DEFAULT NULL,
   `telefono` varchar(10) DEFAULT NULL,
   `contrasena` varchar(255) DEFAULT NULL,
-  `Tipo_de_Usuario` int(20) DEFAULT NULL,
   `Eliminar` int(20) DEFAULT NULL,
   `fecha_ingreso` date DEFAULT NULL,
   `token_recuperacion` varchar(255) DEFAULT NULL,
-  `expira_token` datetime DEFAULT NULL
+  `expira_token` datetime DEFAULT NULL,
+  `id_tipo1` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `nombre`, `correo`, `telefono`, `contrasena`, `Tipo_de_Usuario`, `Eliminar`, `fecha_ingreso`, `token_recuperacion`, `expira_token`) VALUES
-(1, NULL, 'jose adrain', 'joseadrian_v12@hotmail.com', '9991228240', '$2y$10$A.r3SbIznDftjr61urcOfuN.oDNvjJmBApsiV111NsLzOUQZOLj0K', 0, 0, '2025-03-02', 'bf1ad97d24332ed61bb074a694883968a5e83b0a4ff2af30181d85ab6e98d3719daa8be7b830de42a57103004881594322ff', '2025-03-12 20:56:43'),
-(2, NULL, 'jose adrain', 'joseadrian_v@hotmail.com', '9992339876', 'Dinorey123', 0, 0, '2025-03-03', NULL, NULL),
-(3, NULL, 'elewna', 'elena.cventura@gmail.com', '9998273663', '$2y$10$yQxCNNaD3RqP4/ZzIa4tjeldkta3BXdFVAVB.YRmBRkjG2If4X16K', 0, 0, '2025-03-12', 'cce4f86e730a7be5bd350c1cd77511a55f0c135d087ca2eac20dc1c4f243d2ab6df7b42af4ce2a569b314ab6a4ca3d36b7be', '2025-03-12 21:06:20');
+INSERT INTO `usuarios` (`id`, `usuario`, `nombre`, `correo`, `telefono`, `contrasena`, `Eliminar`, `fecha_ingreso`, `token_recuperacion`, `expira_token`, `id_tipo1`) VALUES
+(1, NULL, 'jose adrain', 'joseadrian_v12@hotmail.com', '9991228240', '$2y$10$olfRie/KLgrhBn4E2SyxSOfqSYWHcNxIrWzXs6nuc3i0DUhpgZULC', 0, '2025-03-02', NULL, NULL, 1),
+(2, NULL, 'jose adrain', 'joseadrian_v@hotmail.com', '9992339876', 'Dinorey123', 0, '2025-03-03', NULL, NULL, 2),
+(3, NULL, 'juan', 'prueba@gmail2.com', '9992339876', '$2y$10$hfH6mgpIYCOC6OhQa5uyfuwB2Ss7nu3hZg0LVdZWwkQbmGNaNV16S', NULL, '2030-12-14', NULL, NULL, 2),
+(5, NULL, 'Juan', 'prueba3@gmail.com', '9992339876', '$2y$10$arqlFBfnvdItqoHYXDoEHO8NVAk.G2KScBPsDNunkG5i3d3uqmpq.', NULL, '2025-03-26', NULL, NULL, 2);
 
 --
 -- Índices para tablas volcadas
@@ -128,10 +149,17 @@ ALTER TABLE `ingredientes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `tipo_usuario`
+--
+ALTER TABLE `tipo_usuario`
+  ADD PRIMARY KEY (`id_tipo`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_tipo1` (`id_tipo1`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -141,7 +169,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comidas`
 --
 ALTER TABLE `comidas`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `ingredientes`
@@ -150,10 +178,26 @@ ALTER TABLE `ingredientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `tipo_usuario`
+--
+ALTER TABLE `tipo_usuario`
+  MODIFY `id_tipo` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_tipo1`) REFERENCES `tipo_usuario` (`id_tipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
