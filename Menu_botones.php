@@ -2,7 +2,7 @@
     <nav class="menu">
 
 <a href="nuevacomida.php">Agregar Comidas</a>
-<a href="#">Opcion 3</a>
+<a href="menuA.php">Menu</a>
 <a href="#">Opcion 4</a>
 <a href="ListaU.php">Lista de usuarios</a>
 <!-- <a class="regisU" href="registrarU.php">Registrar</a> -->
