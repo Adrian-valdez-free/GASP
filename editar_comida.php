@@ -10,7 +10,7 @@ if (isset($_POST['id']) && isset($_POST['nombre_comida']) && isset($_POST['descr
     // Si se subió una nueva imagen, procesa el archivo
     if (!empty($_FILES['imagen']['name'])) {
         $nombre_imagen = $_FILES['imagen']['name'];
-        $ruta_imagen = 'img/' . basename($nombre_imagen);
+        $ruta_imagen = 'fotos/' . basename($nombre_imagen);
 
         if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_imagen)) {
             // Actualiza los datos, incluyendo la nueva ruta de imagen

@@ -16,7 +16,8 @@
    
 
 <section class="tab_content">
-     <h1 class="tititu">REGISTRO DE COMIDA</h1>
+    <br>
+     <h1 class="Titu">REGISTRO DE COMIDA</h1>
      <br>
         <div id="tab1" class="VerListaAdmin">
             <table class="tablaAdmin">
@@ -51,8 +52,8 @@
                         <td><?php echo $row["descripcion"]; ?></td>
                         <td>$<?php echo $row["precio"]; ?></td>
                         <td> 
-                            <a href="eliminar.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
-                            <button onclick="mostrarModal(<?php echo $row['id']; ?>, '<?php echo $row['nombre_comida']; ?>', '<?php echo $row['descripcion']; ?>', <?php echo $row['precio']; ?>, '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
+                            <a  class = "BtnEli" href="eliminarComida.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
+                            <button class = "BtnEdit"  onclick="mostrarModal(<?php echo $row['id']; ?>, '<?php echo $row['nombre_comida']; ?>', '<?php echo $row['descripcion']; ?>', <?php echo $row['precio']; ?>, '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
                         </td>
                     </tr>
                 <?php
@@ -64,53 +65,7 @@
             </table>
         </div>
 <br>
-        <h1 class="tititu">REGISTRO DE INGREDIENTES</h1>
-     <br>
-        <div id="tab2" class="VerListaAdmin">
-            <table class="tablaAdmin">
-                <tr class="tablaAdminTop">
-                    <th>Foto</th>
-                    <th>NOMBRE</th>
-                    <th> </th>
-                    
-                </tr>
-
-                <?php
-                require "conexion.php";
-
-                if (!$conectar) {
-                    die("Error de conexión: " . mysqli_connect_error());
-                }
-
-                $todos_Usuarios = "SELECT * FROM ingredientes ORDER BY id ASC";
-                $resultado = mysqli_query($conectar, $todos_Usuarios);
-
-                if (!$resultado) {
-                    die("Error en la consulta SQL: " . mysqli_error($conectar));
-                }
-
-                while ($row = mysqli_fetch_assoc($resultado)) {
-                ?>
-                    <tr>
-                        <td><img src="<?php echo $row["ruta"]; ?>" alt="" class="imagen-circular" height="75px" width="100px"></td>
-                        <td><?php echo $row["nombre_ingrediente"]; ?></td>
-                        <td> 
-                            <a href="eliminarIngredientes.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
-                            <button onclick="mostrarModalIngrediente(<?php echo $row['id']; ?>, '<?php echo $row['nombre_ingrediente']; ?>', '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
-
-                        </td>
-                    </tr>
-                <?php
-                }
-
-                mysqli_free_result($resultado);
-                mysqli_close($conectar);
-                ?>
-            </table>
-        </div>
-
-        <br>
-     <h1 class="tititu">REGISTRO DE COMPLEMENTOS</h1>
+<h1 class="Titu">REGISTRO DE COMPLEMENTOS</h1>
      <br>
         <div id="tab3" class="VerListaAdmin">
             <table class="tablaAdmin">
@@ -145,8 +100,53 @@
                         <td><?php echo $row["descripcion"]; ?></td>
                         <td>$<?php echo $row["precio"]; ?></td>
                         <td> 
-                            <a href="eliminarComplementos.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
-                            <button onclick="mostrarModalComplemento(<?php echo $row['id']; ?>, '<?php echo $row['nombre_complemento']; ?>', '<?php echo $row['descripcion']; ?>', <?php echo $row['precio']; ?>, '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
+                            <a class = "BtnEli" href="eliminarComplementos.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
+                            <button class = "BtnEdit" onclick="mostrarModalComplemento(<?php echo $row['id']; ?>, '<?php echo $row['nombre_complemento']; ?>', '<?php echo $row['descripcion']; ?>', <?php echo $row['precio']; ?>, '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
+                        </td>
+                    </tr>
+                <?php
+                }
+
+                mysqli_free_result($resultado);
+                mysqli_close($conectar);
+                ?>
+            </table>
+            <br>
+        </div>
+        <h1 class="Titu">REGISTRO DE INGREDIENTES</h1>
+     <br>
+        <div id="tab2" class="VerListaAdmin">
+            <table class="tablaAdmin">
+                <tr class="tablaAdminTop">
+                    <th>Foto</th>
+                    <th>NOMBRE</th>
+                    <th> </th>
+                    
+                </tr>
+
+                <?php
+                require "conexion.php";
+
+                if (!$conectar) {
+                    die("Error de conexión: " . mysqli_connect_error());
+                }
+
+                $todos_Usuarios = "SELECT * FROM ingredientes ORDER BY id ASC";
+                $resultado = mysqli_query($conectar, $todos_Usuarios);
+
+                if (!$resultado) {
+                    die("Error en la consulta SQL: " . mysqli_error($conectar));
+                }
+
+                while ($row = mysqli_fetch_assoc($resultado)) {
+                ?>
+                    <tr>
+                        <td><img src="<?php echo $row["ruta"]; ?>" alt="" class="imagen-circular" height="75px" width="100px"></td>
+                        <td><?php echo $row["nombre_ingrediente"]; ?></td>
+                        <td> 
+                            <a class = "BtnEli" href="eliminarIngredientes.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
+                            <button class = "BtnEdit" onclick="mostrarModalIngrediente(<?php echo $row['id']; ?>, '<?php echo $row['nombre_ingrediente']; ?>', '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
+
                         </td>
                     </tr>
                 <?php
@@ -157,6 +157,9 @@
                 ?>
             </table>
         </div>
+
+        <br>
+     
         </section>
 
 </div>
@@ -164,7 +167,7 @@
 <!-- Modal para editar comida -->
 <div class="modal-bg" id="modal-bg">
   <div class="modal">
-    <button class="close-btn" onclick="cerrarModal()">X</button>
+    <button class="cerrar1" onclick="cerrarModal()">X</button>
     <h2>Editar Comida</h2>
     <form id="formEditar" action="editar_comida.php" method="post" enctype="multipart/form-data">
       <input type="hidden" name="id" id="comidaId">
@@ -189,7 +192,7 @@
 <!-- Modal para editar ingrediente -->
 <div class="modal-bg" id="modal-bg-ingrediente">
   <div class="modal">
-    <button class="close-btn" onclick="cerrarModalIngrediente()">X</button>
+    <button class="cerrar1" onclick="cerrarModalIngrediente()">X</button>
     <h2>Editar Ingrediente</h2>
     <form id="formEditarIngrediente" action="editar_ingrediente.php" method="post" enctype="multipart/form-data">
       <input type="hidden" name="id" id="ingredienteId">
@@ -208,7 +211,7 @@
 <!-- Modal para editar complemento -->
 <div class="modal-bg" id="modal-bg-complemento">
   <div class="modal">
-    <button class="close-btn" onclick="cerrarModalComplemento()">X</button>
+    <button class="cerrar1" onclick="cerrarModalComplemento()">X</button>
     <h2>Editar Complemento</h2>
     <form id="formEditarComplemento" action="editar_complemento.php" method="post" enctype="multipart/form-data">
       <input type="hidden" name="id" id="complementoId">

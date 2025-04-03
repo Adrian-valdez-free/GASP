@@ -39,8 +39,6 @@ $Recuperar = "SELECT * FROM usuarios WHERE correo = '$usuario'";
       <p>Nombre:<?php echo $fila["nombre"];?></p>
       <p>Telefono:<?php echo  $fila["telefono"];?></p>
       <p>Fecha de ingreso:<?php echo $fila["fecha_ingreso"];?></p>
-      <p>Contraseña:<?php echo $fila["contrasena"];?></p>
-
     <?php
       }
       ?>

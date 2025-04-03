@@ -89,6 +89,17 @@
     border-radius: 25px;
     font-size: 14px;
 }
+.boton1{
+  width: 200px;
+  height: 40px;
+  margin: auto;
+  padding: 10px;
+  background-color: #F0D610;
+  color: black;
+  border: 0px;
+  border-radius: 25px;
+  font-size: 14px;
+}
 .boton1 button:hover{
     background-color: #d5dee1;
     color: white;
@@ -175,7 +186,13 @@ span{
     text-decoration: none;
     color: red;
 }
-
+.cerrar1{
+  float: right;
+  text-decoration: none;
+  background-color: red;
+  color: black;
+  border: 0px;
+}
 .principal{
     vertical-align: top;
     display: inline-block;
@@ -215,15 +232,43 @@ span{
   }
 .menu a:hover{
     background-color: #d5dee1;
-    color: white;
+    color: black;
     border: 1px solid #00000000;
   }
+.BtnEdit {
+  color: #CB9904;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 1px solid #CB9904;
+  border-radius: 15px;
+  margin: 10px;
+  transition: .1s;
+  font-weight: 300;
+  background-color: white;
+}
+.BtnEdit:hover {
+  background-color: #d5dee1;
+    color: black;
+    border: 0px;
+}
+.BtnEli {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 1px red solid;
+  background-color: red;
+  border-radius: 15px;
+  margin: 10px;
+  transition: .1s;
+  font-weight: 300;
+}
+
   .Despligue {
     text-align: center;
   }
   
 table {
-    margin: auto;
+  margin: auto;
   text-align: center;
   padding: 2px;
   border-radius: 5px;
@@ -268,10 +313,12 @@ th {
     grid-template-columns: 1fr;
     gap: 30px;
     justify-items: center;
-    align-items: center;
+    align-items: left;
+    text-align: left;
     padding: 20px;
   }
 .datos{
+    font-size: 18px ;
     text-align: center;
     width: 600px;
     height: 300px;
@@ -409,4 +456,10 @@ th {
   .modal button {
     padding: 10px;
     margin-top: 10px;
+  }
+  .Titu {
+    font-size: 25px;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
   }

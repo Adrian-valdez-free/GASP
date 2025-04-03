@@ -11,7 +11,7 @@ if (isset($_POST['id'], $_POST['nombre_ingrediente'])) {
     // Si se sube una imagen nueva
     if (!empty($_FILES['imagen']['name'])) {
         $nombre_imagen = $_FILES['imagen']['name'];
-        $ruta_imagen = 'img/' . basename($nombre_imagen);
+        $ruta_imagen = 'fotos/' . basename($nombre_imagen);
 
         // Verifica si la imagen se subió correctamente
         if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_imagen)) {

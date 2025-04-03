@@ -17,7 +17,7 @@
   include "Menu_botonesE.php";
   ?>
   <br><br>
-  <div class="ContPerfil ancho">
+  <div class="ContPerfil">
 
 <section class="datos">
     <h5>Datos del personal</h5>
@@ -37,10 +37,10 @@ $Recuperar = "SELECT * FROM usuarios INNER JOIN tipo_usuario ON usuarios.id_tipo
 <br>
       <p>ID:<?php echo $fila["id"] ;?> </p>
       <p>Nombre:<?php echo $fila["nombre"];?></p>
+      <p>Nombre:<?php echo $fila["correo"];?></p>
       <p>Telefono:<?php echo  $fila["telefono"];?></p>
       <p>Fecha de ingreso:<?php echo $fila["fecha_ingreso"];?></p>
       <p>Rol:<?php echo $fila["tipo"];?></p>
-      <p>Contraseña:<?php echo $fila["contrasena"];?></p>
 
     <?php
       }
