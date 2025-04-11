@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Servicio_comida"
+		},
+		{
+			"path": "../Tarea_JOINS"
+		},
+		{
+			"path": "../Biblioteca"
+		}
+	],
+	"settings": {}
+}

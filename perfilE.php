@@ -34,7 +34,7 @@ $Recuperar = "SELECT * FROM usuarios INNER JOIN tipo_usuario ON usuarios.id_tipo
       while ($fila = mysqli_fetch_assoc($resultado)) {
 
       ?>
-<br>
+
       <p>ID:<?php echo $fila["id"] ;?> </p>
       <p>Nombre:<?php echo $fila["nombre"];?></p>
       <p>Nombre:<?php echo $fila["correo"];?></p>

@@ -463,3 +463,24 @@ th {
     color: black;
     margin-bottom: 20px;
   }
+  .CajaC {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  box-shadow: 2px 2px 5px rgb(167, 167, 167);
+  margin-bottom: 10px;
+  }
+  .CajaC2 {
+    text-align: center;
+    width: 300px;
+    border: 3px #eff2f7 solid;
+    border-radius: 15px;
+    background-color: #eff2f7;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
