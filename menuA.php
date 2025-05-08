@@ -52,7 +52,7 @@
                         <td><?php echo $row["descripcion"]; ?></td>
                         <td>$<?php echo $row["precio"]; ?></td>
                         <td> 
-                            <a  class = "BtnEli" href="eliminarComida.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
+                            <a  class = "BtnEli" onClick = "validar('eliminarComida.php?id=<?php echo $row["id"]; ?>')" href="#" id="consu2">Eliminar</a>
                             <button class = "BtnEdit"  onclick="mostrarModal(<?php echo $row['id']; ?>, '<?php echo $row['nombre_comida']; ?>', '<?php echo $row['descripcion']; ?>', <?php echo $row['precio']; ?>, '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
                         </td>
                     </tr>
@@ -100,7 +100,7 @@
                         <td><?php echo $row["descripcion"]; ?></td>
                         <td>$<?php echo $row["precio"]; ?></td>
                         <td> 
-                            <a class = "BtnEli" href="eliminarComplementos.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
+                            <a class = "BtnEli" onClick = "validar('eliminarComplementos.php?id=<?php echo $row["id"]; ?>')"href="#" id="consu2">Eliminar</a>
                             <button class = "BtnEdit" onclick="mostrarModalComplemento(<?php echo $row['id']; ?>, '<?php echo $row['nombre_complemento']; ?>', '<?php echo $row['descripcion']; ?>', <?php echo $row['precio']; ?>, '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
                         </td>
                     </tr>
@@ -144,7 +144,7 @@
                         <td><img src="<?php echo $row["ruta"]; ?>" alt="" class="imagen-circular" height="75px" width="100px"></td>
                         <td><?php echo $row["nombre_ingrediente"]; ?></td>
                         <td> 
-                            <a class = "BtnEli" href="eliminarIngredientes.php?id=<?php echo $row["id"]; ?>" id="consu2">Eliminar</a>
+                            <a class = "BtnEli" onClick = "validar('eliminarIngredientes.php?id=<?php echo $row["id"]; ?>')"href="#" id="consu2">Eliminar</a>
                             <button class = "BtnEdit" onclick="mostrarModalIngrediente(<?php echo $row['id']; ?>, '<?php echo $row['nombre_ingrediente']; ?>', '<?php echo $row['ruta']; ?>')" id="consu3">Editar</button>
 
                         </td>
@@ -274,6 +274,13 @@ function cerrarModalIngrediente() {
   }
 
 </script>
-
+<script>
+    function validar(url) {
+			var eliminar = confirm("Realmente deseas ELIMINAR esta opción del menú");
+			if (eliminar == true) {
+				window.location = url;
+			}
+		}
+  </script>
 </body>
 </html>

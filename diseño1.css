@@ -11,6 +11,9 @@
     color: #333;
     background-color: white;
   }
+.centrar{
+ text-align: center;
+}
 
 .encabezado{
     width:100%;
@@ -345,6 +348,30 @@ th {
     padding: 10px;
     border-radius: 20px;
 }
+.OtherIn{
+  border: 1px solid black;
+    width: 200px;
+    height: 20px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+.OtherIn{
+  border: 1px solid black;
+    width: 50px;
+    height: 20px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+.rec
+{
+  width: 200px;
+    height: 20px;
+    margin: auto;
+    border-radius: 20px;
+
+}
 .ancho {
     max-width: 1200px;
     margin: auto;
@@ -396,7 +423,7 @@ th {
   .formRe{
  
     display:grid;
-    width: 600px;
+    width: 700px;
     border: 1px solid #00000000;
     background-color: white;
     grid-template-columns: 1fr 1fr;
@@ -483,4 +510,22 @@ th {
     background-color: #eff2f7;
     padding: 10px;
     margin-bottom: 15px;
+  }
+  .cajapedidos {
+    margin: 10px;
+    margin-bottom: 15px;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgb(167, 167, 167);
+  }
+  .pedidosc {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  .confirmacion-container {
+    margin: auto;
+    text-align: center;
+    width: 1200px;
   }

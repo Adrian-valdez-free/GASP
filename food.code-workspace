@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../flutter/Food/food"
+		},
+		{
+			"path": "../Servicio_comida"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

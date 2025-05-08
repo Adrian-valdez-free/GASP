@@ -32,16 +32,16 @@
 
       <form action="guardarComida.php" class="formRe" method="post" enctype="multipart/form-data" onsubmit="return validarImagen()">
         <label for="" class="cuadrosG">Nombre de la comida: </label>
-        <input type="text" class="rec" name="nombre_comida" required>
+        <input type="text" class="OtherIn" name="nombre_comida" required>
         <label for="" class="cuadrosG">Descripción: </label>
-        <input type="text" class="rec" name="descripcion" required>
+        <input type="text" class="OtherIn" name="descripcion" required>
         <label for="" class="cuadrosG" id="rec2">Precio: </label>
-        <input type="number" class="rec" name="precio" required min="1">
+        <input type="number" class="OtherIn" name="precio" required min="1">
         <label for="" class="cuadrosG">Subir foto:</label>
         <input type="file" class="rec" name="imagen" accept=".jpg, .jpeg, .png" required>
         <div class="botones">
-          <button type="submit" id="envi2" class="fifi">Guardar Comida</button>
-          <button type="reset" id="envi2" class="fifi">Borrar datos</button>
+          <button type="submit" id="envi2" class="BtnEdit">Guardar Comida</button>
+          <button type="reset" id="envi2" class="BtnEdit">Borrar datos</button>
         </div>
       </form>
     </div>
@@ -50,12 +50,12 @@
 
       <form action="guardarIngrediente.php" class="formRe" method="post" enctype="multipart/form-data" onsubmit="return validarImagen()">
         <label for="" class="cuadrosG">Nombre del ingrediente: </label>
-        <input type="text" class="rec" name="nombre_ingrediente" required>
+        <input type="text" class="OtherIn" name="nombre_ingrediente" required>
         <label for="" class="cuadrosG">Subir foto:</label>
         <input type="file" class="rec" name="imagen" accept=".jpg, .jpeg, .png" required>
         <div class="botones">
-          <button type="submit" id="envi2" class="fifi">Guardar Ingrediente</button>
-          <button type="reset" id="envi2" class="fifi">Borrar datos</button>
+          <button type="submit" id="envi2" class="BtnEdit">Guardar Ingrediente</button>
+          <button type="reset" id="envi2" class="BtnEdit">Borrar datos</button>
         </div>
       </form>
     </div>
@@ -64,16 +64,16 @@
 
       <form action="guardarcomplementos.php" class="formRe" method="post" enctype="multipart/form-data" onsubmit="return validarImagen()">
         <label for="" class="cuadrosG">Nombre del complemento: </label>
-        <input type="text" class="rec" name="nombre_complemento" required>
+        <input type="text" class="OtherIn" name="nombre_complemento" required>
         <label for="" class="cuadrosG">Descripción: </label>
-        <input type="text" class="rec" name="descripcion" required>
+        <input type="text" class="OtherIn" name="descripcion" required>
         <label for="" class="cuadrosG" id="rec2">Precio: </label>
-        <input type="number" class="rec" name="precio" required min="1">
+        <input type="number" class="OtherIn" name="precio" required min="1">
         <label for="" class="cuadrosG">Subir foto:</label>
         <input type="file" class="rec" name="imagen" accept=".jpg, .jpeg, .png" required>
         <div class="botones">
-          <button type="submit" id="envi2" class="fifi">Guardar Complemento</button>
-          <button type="reset" id="envi2" class="fifi">Borrar datos</button>
+          <button type="submit" id="envi2" class="BtnEdit">Guardar Complemento</button>
+          <button type="reset" id="envi2" class="BtnEdit">Borrar datos</button>
         </div>
       </form>
     </div>
