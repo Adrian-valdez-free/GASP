@@ -20,11 +20,11 @@
         <div class="imagen">
             <img class="ima1" src="imagenes/logo.png" alt="">
         </div>
-        <div class="titulo"><h1>El Chucho</h1></div>
+        <div class="titulo"><h1>El dasd</h1></div>
     </div>
     <div class="login">
         <div class="login2">
-            <h1 class="titulo2">LOGIN</h1>
+            <h1 class="titulo2">fast</h1>
             <form action="verificar.php" method="post">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="usuario">CORREO:</label>
                 <input type="text" name="usuario" required><br><br>
